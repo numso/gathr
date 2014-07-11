@@ -8,7 +8,7 @@ module.exports = {
       user: 'numso',
       repo: 'atlas-server',
       path: 'server/routes',
-      preformatter: 'colon'
+      parser: 'colon'
     }
   },
 
@@ -23,7 +23,7 @@ module.exports = {
   ],
 
 
-  preformatters: [
-    'gathr-pre-colon'
+  parsers: [
+    'gathr-parse-colon'
   ]
 };

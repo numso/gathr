@@ -37,7 +37,7 @@ module.exports = {
   ],
 
 
-  preformatters: [
+  parsers: [
     'PackageNameOrPath'
     { pkg: 'PackageNameOrPath', option: 'val' }
   ]
@@ -51,8 +51,8 @@ Input
 ```
 module.exports = function (opts) {
   return {
-    init: function () { return 'promise|value'; },
-    retrieve: function (preformatter) { return 'promise|value'; }
+    init: function () { return 'promise|value'; },          // (optional) Do init work. May return a promise for async work.
+    retrieve: function (parser) { return 'promise|value'; } // (required) Grab data. Parse each piece with parser. May return a promise for async work.
   };
 };
 ```
@@ -62,15 +62,16 @@ Output
 ```
 module.exports = function (opts) {
   return {
-    id: 'type',
-    contentType: 'optional content type',
-    meta: {
+    id: 'type',                  // (optional) Default: A random guid. If left out, decorators can not be applied.
+    contentType: 'content type', // (optional) Default: 'text/plain'
+    meta: {                      // (optional) To be used to generate endpoint data for this route
       description: 'Description of this endpoint.',
-      requests: ['example request']
+      requests: ['example request'],
+      key: 'any other meta we decide we need for the endpoint schema'
     },
-    path: '/path',
-    init: function () { return 'promise|value'; },
-    process: function (raw) { return 'promise|value'; }
+    path: '/path',                                      // (required) Used to set up an endpoint to grab this outputter
+    init: function () { return 'promise|value'; },      // (optional) Do init work. May return a promise for async work.
+    process: function (raw) { return 'promise|value'; } // (required) Process the raw json. May return a promise for async work.
   };
 };
 ```
@@ -80,30 +81,28 @@ Decorator
 ```
 module.exports = function (opts) {
   return {
-    contentType: 'optional content type',
-    meta: {
+    contentType: 'content type', // (optional) Default: parentOutput.contentType || 'text/plain'
+    meta: {                      // (optional) To be used to generate endpoint data for this route
       description: 'Description of this endpoint.',
-      requests: ['example request']
+      requests: ['example request'],
+      key: 'any other meta we decide we need for the endpoint schema'
     },
-    path: '/path',
-    parent: 'type',
-    init: function () { return 'promise|value'; },
-    decorate: function (raw) { return 'promise|value'; }
+    path: '/path',                                       // (required) Used to set up an endpoint to grab this outputter
+    parent: 'type',                                      // (required) The id of the outputter you wish to decorate
+    init: function () { return 'promise|value'; },       // (optional) Do init work. May return a promise for async work.
+    decorate: function (raw) { return 'promise|value'; } // (required) Decorate outputted json. May return a promise for async work.
   };
 };
 ```
 
-Preformatter
+Parser
 
 ```
 module.exports = function (opts) {
   return {
-    id: 'colon',
-    format: function (raw) {
-      return Promise.try(function () {
-        return parseFile(raw);
-      });
-    }
+    id: 'type',                                       // (required) The id to pass into the output config options.
+    init: function () { return 'promise|value'; },    // (optional) Do init work. May return a promise for async work.
+    parse: function (raw) { return 'promise|value'; } // (required) Parse a chunk of data. May return a promise for async work.
   };
 };
 ```

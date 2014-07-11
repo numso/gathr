@@ -10,7 +10,7 @@
     "gathr-in-files": "^0.0.0",
     "gathr-in-github": "^0.0.0",
     "gathr-out-json": "^0.0.0",
-    "gathr-pre-colon": "^0.0.0",
+    "gathr-parse-colon": "^0.0.0",
     "morgan": "^1.1.1"
   },
   "scripts": {
