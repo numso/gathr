@@ -3,6 +3,8 @@ gathr
 
 A simple tool to help you view and use all of your apis in one spot.
 
+For a list of available strategies, check the [Wiki](../../wiki/Strategies).
+
 still in very early alpha...
 
 ##Description
