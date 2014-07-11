@@ -1,12 +1,229 @@
 [
   {
-    "test2": "foo"
+    "fileName": "add-server.js",
+    "url": "/addServer",
+    "method": "post",
+    "group": "Servers",
+    "description": "This endpoint is used to generate a new token and add it to the authorized token list. You must be logged in to hit it.",
+    "request": [
+      {
+        "key": "<bad>",
+        "url": "/addServer",
+        "body": {}
+      },
+      {
+        "key": "<good-with-expiry>",
+        "method": "post",
+        "url": "/addServer/1234",
+        "header": {
+          "x-auth-header": "124352435"
+        },
+        "body": {
+          "date": 24923420359234024
+        }
+      },
+      {
+        "key": "<good>",
+        "method": "post",
+        "header": {
+          "x-auth-header": "121234234"
+        },
+        "body": {}
+      }
+    ],
+    "header": {
+      "x-auth-header": "This is the header used to authenticate"
+    },
+    "body": {
+      "token<string>": "This is something else.",
+      "date<string|optional>": "The expiration date for the token you are about to generate."
+    },
+    "param": {
+      "name": "The name for the thing.",
+      "age": "The age of the thing."
+    },
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
   },
   {
-    "woot2": "hi",
-    "and2": 4
+    "fileName": "add-server.js",
+    "url": "/removeServer",
+    "method": "post",
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
   },
   {
-    ":)2": ":("
+    "fileName": "add-server.js",
+    "url": "/listServers",
+    "method": "post",
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "add-server.js",
+    "url": "/startServer",
+    "method": "post",
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "add-server.js",
+    "url": "/stopServer",
+    "method": "post",
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "add-server.js",
+    "url": "/removeInfo",
+    "method": "post",
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "authentication.js",
+    "url": "/login",
+    "method": "post",
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "authentication.js",
+    "url": "/logout",
+    "method": "post",
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "authentication.js",
+    "url": "/loggedIn",
+    "method": "get",
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "authentication.js",
+    "url": "/verify",
+    "method": "post",
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "generate-api.js",
+    "url": "/endpoints",
+    "method": "get",
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "tokens.js",
+    "url": "/generateToken",
+    "method": "post",
+    "group": "Tokens",
+    "description": "This endpoint is used to generate a new token and add it to the authorized token list. You must be logged in to hit it.",
+    "request": [
+      {
+        "key": "<bad>",
+        "url": "/generateToken",
+        "body": {}
+      },
+      {
+        "key": "<good-with-expiry>",
+        "url": "/generateToken",
+        "header": {
+          "x-auth-header": "124352435"
+        },
+        "body": "{ date: 24923420359234023 }"
+      },
+      {
+        "key": "<good>",
+        "url": "/generateToken",
+        "header": {
+          "x-auth-header": "121234234"
+        },
+        "body": {}
+      }
+    ],
+    "body": {
+      "date<string|optional>": "The expiration date for the token you are about to generate."
+    },
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "tokens.js",
+    "url": "/invalidateToken",
+    "method": "post",
+    "group": "Tokens",
+    "description": "This endpoint is used to invalidate a token from the authorized token list. You must be logged in to hit it.",
+    "request": [
+      {
+        "key": "<bad>",
+        "url": "/invalidateToken",
+        "body": "{ token: 'bad token' }"
+      },
+      {
+        "key": "<good>",
+        "url": "/invalidateToken",
+        "header": {
+          "x-auth-header": "121234234"
+        },
+        "body": "{ token: 'edd4c62c-1a89-0ea4-3968-551b8c3e5e79' }"
+      }
+    ],
+    "body": {
+      "token<string>": "The token that you want to invalidate."
+    },
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "tokens.js",
+    "url": "/deleteToken",
+    "method": "post",
+    "group": "Tokens",
+    "description": "This endpoint is used to delete a token from the authorized token list. You must be logged in to hit it.",
+    "request": [
+      {
+        "key": "<bad>",
+        "url": "/deleteToken",
+        "body": "{ token: 'bad token' }"
+      },
+      {
+        "key": "<good>",
+        "url": "/deleteToken",
+        "header": {
+          "x-auth-header": "121234234"
+        },
+        "body": "{ token: 'edd4c62c-1a89-0ea4-3968-551b8c3e5e79' }"
+      }
+    ],
+    "body": {
+      "token<string>": "The token that you want to remove from the list."
+    },
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
+  },
+  {
+    "fileName": "tokens.js",
+    "url": "/tokens",
+    "method": "get",
+    "group": "Tokens",
+    "description": "This method will send back all the tokens from the authorized token list. You must be logged in to hit it.",
+    "request": [
+      {
+        "key": "<bad>",
+        "url": "/tokens"
+      },
+      {
+        "key": "<good>",
+        "url": "/tokens",
+        "header": {
+          "x-auth-header": "123423423434"
+        }
+      }
+    ],
+    "serverName": "Atlas",
+    "baseUrl": "http://localhost:59241"
   }
 ]

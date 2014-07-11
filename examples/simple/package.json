@@ -1,17 +1,14 @@
 {
   "name": "gathr-example",
   "version": "0.0.0",
-  "description": "Shows off how to use gathr a bit more complex-ly",
+  "description": "Shows off how to use gathr",
   "main": "app.js",
   "dependencies": {
     "gathr": "^0.0.1",
     "gathr-in-files": "^0.0.0",
-    "gathr-in-github": "^0.0.0",
     "gathr-out-json": "^0.0.0",
-    "gathr-pre-colon": "^0.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app"
   },
   "author": "Dallin Osmun",

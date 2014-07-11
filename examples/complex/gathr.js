@@ -3,7 +3,7 @@
 
 module.exports = {
   inputs: {
-    'gathr-in-file': ['./data/apis.json', './data/apis2.json'],
+    'gathr-in-files': ['./data/apis.json', './data/apis2.json'],
     'gathr-in-github': {
       user: 'numso',
       repo: 'atlas-server',
