@@ -1,20 +1,16 @@
 /* jshint node:true */
 'use strict';
 
-var _ = require('lodash');
-
-module.exports = function (opts) {
-  var path = opts.path || '/extra';
-
+module.exports = function () {
   return {
     meta: {
-      description: 'This decorator will attach a key to each json obj.'
+      description: 'This decorator will add an author name to each json obj.'
     },
-    path: path,
+    path: '/extra',
     parent: 'JSON',
     decorate: function (raw) {
-      _.each(raw, function (endpoint) {
-        endpoint.extra = 'woot';
+      raw.forEach(function (endpoint) {
+        endpoint.authorName = 'numso';
       });
       return raw;
     }

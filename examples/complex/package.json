@@ -4,11 +4,14 @@
   "description": "Shows off how to use gathr a bit more complex-ly",
   "main": "app.js",
   "dependencies": {
+    "errorhandler": "^1.1.1",
+    "express": "^4.5.1",
     "gathr": "^0.0.1",
     "gathr-in-files": "^0.0.0",
     "gathr-in-github": "^0.0.0",
     "gathr-out-json": "^0.0.0",
-    "gathr-pre-colon": "^0.0.0"
+    "gathr-pre-colon": "^0.0.0",
+    "morgan": "^1.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

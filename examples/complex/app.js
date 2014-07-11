@@ -1,11 +1,23 @@
 /* jshint node:true */
 'use strict';
 
-var gathr = require('gathr');
+// require express + express middleware;
+var      express = require('express');
+var       morgan = require('morgan');
+var errorhandler = require('errorhandler');
 
-gathr.init({
-  include_self: true
-});
+// require gathr
+var        gathr = require('gathr');
 
-gathr.listen(3000);
+// initialize both
+gathr.init();
+var app = express();
+
+// set up express chain of command, including gathr
+app.use(morgan());
+gathr.express(app);
+app.use(errorhandler());
+
+// start listening
+app.listen(3000);
 console.log('server listening on port 3000');
