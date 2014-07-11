@@ -1,0 +1,28 @@
+{
+  "name": "gathr",
+  "version": "0.0.1",
+  "description": "gathers up apis and displays them",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/numso/gathr.git"
+  },
+  "keywords": [
+    "api",
+    "gather",
+    "scatter"
+  ],
+  "author": "Dallin Osmun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/numso/gathr/issues"
+  },
+  "homepage": "https://github.com/numso/gathr",
+  "dependencies": {
+    "bluebird": "^2.2.1",
+    "lodash": "^2.4.1"
+  }
+}
