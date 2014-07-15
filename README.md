@@ -9,9 +9,10 @@ still in very early alpha...
 
 ##TODO
 
-[ ] Rework listeners to accept more than one decorator
+[x] Rework listeners to accept more than one decorator
 [ ] Expose meta data for the routes that gathr itself creates
-[ ] Implement some basic caching
+[x] Implement some basic caching
+[ ] Add all the opts that gathr uses (timeout, ttl, configDir, baseUrlPath, etc)
 [ ] Split project into seperate modules
 [ ] Rewrite all of the documentation for readability and accuracy (with stable api)
 
