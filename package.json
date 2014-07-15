@@ -1,6 +1,6 @@
 {
   "name": "gathr",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "gathers up apis and displays them",
   "main": "lib/index.js",
   "scripts": {
